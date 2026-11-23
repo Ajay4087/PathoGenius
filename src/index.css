@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  background: #e7eef1;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+input[type='range'] {
+  accent-color: #0f766e;
+}
+
+.a4-page {
+  width: 794px;
+  height: 1123px;
+  background: #fff;
+  overflow: hidden;
+  position: relative;
+  color: #111;
+}
+
+@page {
+  size: A4;
+  margin: 0;
+}
+
+@media print {
+  html,
+  body,
+  #root,
+  .app-frame,
+  .workspace,
+  .print-stage,
+  .preview-scroll,
+  .preview-zoom,
+  .preview-zoom-inner {
+    height: auto !important;
+    overflow: visible !important;
+    position: static !important;
+    background: #fff !important;
+    width: auto !important;
+    max-height: none !important;
+    transform: none !important;
+    display: block !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .page-frame {
+    margin: 0 !important;
+    box-shadow: none !important;
+    break-after: page;
+    page-break-after: always;
+  }
+
+  .page-frame:last-child {
+    break-after: auto;
+    page-break-after: auto;
+  }
+
+  .letterhead-guide {
+    display: none !important;
+  }
+}
+
+body.pdf-capture .letterhead-guide {
+  display: none !important;
+}
